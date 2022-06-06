@@ -43,11 +43,11 @@
             <label for="manufacturer" class="form-label">Manufacturer</label>
             <select class="form-select" id="manufacturer">
               <option value="4">Select manufacture</option>
+              <option value="0">All</option>
               <option value="Redmi">Redmi</option>
               <option value="Samsung">Samsung</option>
               <option value="Apple">Apple</option>
               <option value="Huawei">Huawei</option>
-              <option value="0">All</option>
               <!-- manufacturers array bu yerga kelishi kerak -->
             </select>
           </div>
@@ -68,7 +68,7 @@
       <section class="col-9">
         <div class="d-flex justify-content-between align-items-baseline">
           <h2 class="h4 mb-4">Products list</h2>
-          <p>Count: 4</p>
+          <p id="count">Count: 4</p>
         </div>
 
         <ul class="row list-unstyled g-3 card-wrapper">

@@ -54,10 +54,11 @@ const createCardBox = (card) => {
   
   return elCardBox;}
   
-  
+  const elCount = document.querySelector("#count")
+
   const renderProducts = (cardsArray = products) =>{
     elCardWrapper.innerHTML= "";
-    
+    elCount.textContent=`Count : ${cardsArray.length}`
     cardsArray.forEach((card) => {
       const elCardBox = createCardBox(card);
       elCardWrapper.append(elCardBox);
@@ -91,6 +92,7 @@ const createCardBox = (card) => {
       const elNewCard = createCardBox(addingCard)
       elCardWrapper.prepend(elNewCard)
     }
+    elCount.textContent=`Count : ${products.length}`
     addProductModal.hide();
   })
   
@@ -185,7 +187,8 @@ const createCardBox = (card) => {
       return toValue <= fromValue ? true : card.price <= toValue;
     })
     .filter(card => {
-      return card.model === manufacturersValue;
+      const manufacturerForm = card.model;
+      return manufacturersValue == "4" || manufacturersValue == "0" ? true : manufacturersValue === manufacturerForm;
 
     })
     .sort((a,b) => {
